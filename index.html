@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee Moose — сеть кофеен в Душанбе</title>
+<meta name="description" content="Coffee Moose: кофе, завтраки, сэндвичи, бургеры и горячие блюда. Пять кофеен в Душанбе. Меню и адреса.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFC72C;--ink:#231D14;--paper:#FFFBF0;--teal:#2A9C94;--line:#E6DCC3;--mute:#6E6552;--card:#FFFFFF;
+--d:'Unbounded','Arial Black',system-ui,sans-serif;--b:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+@media(prefers-color-scheme:dark){:root{--paper:#1B1610;--ink:#FFF4D6;--card:#26201A;--line:#3A3226;--mute:#B7AC93}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:128px}
+body{font-family:var(--b);background:var(--paper);color:var(--ink);line-height:1.5;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:var(--d);font-weight:800;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-style:normal;font-size:15px;color:#231D14}
+nav.links{display:flex;gap:22px;font-weight:700;font-size:15px}
+nav.links a{text-decoration:none}nav.links a:hover{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--y)}
+.hero{background:var(--y);color:#231D14;overflow:hidden;position:relative}
+.hero .wrap{padding-top:64px;padding-bottom:72px}
+.hero h1{font-family:var(--d);font-weight:800;font-size:clamp(46px,11.5vw,138px);line-height:.92;letter-spacing:-.04em}
+.hero p{max-width:34ch;font-size:clamp(18px,2.4vw,22px);font-weight:500;margin-top:28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{font-family:var(--b);font-weight:700;font-size:16px;text-decoration:none;padding:14px 24px;border-radius:999px;background:#231D14;color:#FFF4D6;border:2px solid #231D14;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:transparent;color:#231D14}
+.hero .dot{position:absolute;right:-90px;bottom:-110px;width:360px;height:360px;border-radius:50%;background:var(--teal);opacity:.9}
+.hero .dot2{position:absolute;right:150px;top:36px;width:70px;height:70px;border-radius:50%;border:8px solid #231D14;opacity:.9}
+.stick{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.tools{display:flex;gap:12px;align-items:center;padding:12px 0}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;padding:2px}
+.chips::-webkit-scrollbar{display:none}
+.chips a{white-space:nowrap;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--card)}
+.chips a.on{background:var(--y);border-color:var(--y);color:#231D14}
+.search{width:200px;font:500 15px var(--b);padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+section.menu{padding:56px 0 24px}
+h2.t{font-family:var(--d);font-weight:700;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;line-height:1.1}
+.sub{color:var(--mute);margin-top:6px}
+.cat{margin-top:56px}
+.cat h3{display:inline-block;background:var(--y);color:#231D14;font-family:var(--d);font-weight:700;font-size:clamp(20px,3vw,28px);line-height:1.15;padding:8px 16px;border-radius:10px;letter-spacing:-.01em}
+.cat h3 small{display:block;font-family:var(--b);font-weight:500;font-size:.55em;opacity:.8}
+.list{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px}
+.it{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.it b{font-weight:700;display:block}
+.it span.en{color:var(--mute);font-size:14px;display:block}
+.it em{font-style:normal;font-size:11px;font-weight:800;background:var(--teal);color:#fff;border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+.pr{font-family:var(--d);font-weight:700;font-size:19px;white-space:nowrap}
+.sz{display:grid;grid-template-columns:repeat(3,52px);gap:6px;text-align:right}
+.sz .pr{font-size:17px}.sz .pr.na{color:var(--line)}
+.head{display:flex;justify-content:flex-end;padding-top:14px}
+.head .sz{align-items:end}
+.cup{justify-self:end;background:var(--teal);border-radius:3px 3px 8px 8px;display:block}
+.cup.s{width:14px;height:17px}.cup.m{width:18px;height:23px}.cup.l{width:22px;height:30px}
+.note{display:block;font-family:var(--b);font-size:11px;font-weight:500;color:var(--mute)}
+.empty{display:none;margin-top:40px;padding:24px;border:2px dashed var(--line);border-radius:14px;color:var(--mute)}
+.places{padding:72px 0}
+.pl{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+.pl div{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:22px}
+.pl div:nth-child(odd){border-radius:16px 16px 16px 40px}
+.pl h4{font-family:var(--d);font-size:18px;font-weight:700}
+.pl p{color:var(--mute);margin-top:4px}
+.del{margin-top:28px;background:#231D14;color:#FFF4D6;border-radius:20px;padding:28px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.del b{font-family:var(--d);font-size:clamp(22px,4vw,34px);display:block}
+.del a.btn{background:var(--y);color:#231D14;border-color:var(--y)}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--mute);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+@media(max-width:760px){nav.links{display:none}.list{grid-template-columns:1fr}.search{width:130px}.hero .dot{width:230px;height:230px}.hero .dot2{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="logo" href="#top"><i>M</i>Coffee Moose</a>
+<nav class="links"><a href="#menu">Меню</a><a href="#places">Адреса</a><a href="https://instagram.com/coffeemoose.tajikistan" target="_blank" rel="noopener">Instagram</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="dot"></div><div class="dot2"></div><div class="wrap">
+<h1>Coffee<br>Moose</h1>
+<p>Сеть кофеен в Душанбе. Кофе, завтраки, сэндвичи и горячие блюда.</p>
+<div class="cta"><a class="btn" href="#menu">Смотреть меню</a><a class="btn o" href="tel:+992446402121">Доставка 446 40 21 21</a></div>
+</div></div>
+
+<div class="stick"><div class="wrap tools">
+<nav class="chips" id="chips" aria-label="Разделы меню"></nav>
+<input class="search" id="q" type="search" placeholder="Найти в меню" aria-label="Поиск по меню">
+</div></div>
+
+<section class="menu" id="menu"><div class="wrap">
+<h2 class="t">Меню</h2>
+<p class="sub">Цены указаны так же, как в меню кофеен.</p>
+<div id="cats"></div>
+<div class="empty" id="empty">Ничего не нашлось. Попробуйте другое слово, например «латте» или «суп».</div>
+</div></section>
+
+<section class="places" id="places"><div class="wrap">
+<h2 class="t">Наши кофейни</h2>
+<div class="pl">
+<div><h4>Хусейнзода 28</h4><p>Tcell</p></div>
+<div><h4>Рудаки 32/1</h4><p>iCom</p></div>
+<div><h4>Айни 55</h4><p>Созидание</p></div>
+<div><h4>Махсум 74/4</h4><p>Гулдаста</p></div>
+<div><h4>Рудаки 96</h4><p>Кохи Вахдат. Ежедневно с 7:30 до 23:00</p></div>
+</div>
+<div class="del"><div><b>Доставка</b>446 40 21 21</div><a class="btn" href="tel:+992446402121">Позвонить</a></div>
+</div></section>
+
+<footer><div class="wrap"><span>Coffee Moose, Душанбе</span>
+<span><a href="https://instagram.com/coffeemoose.tajikistan" target="_blank" rel="noopener">Instagram @coffeemoose.tajikistan</a></span></div></footer>
+
+<script>
+// Позиции и цены перенесены из меню без изменений. Если цена в колонке отсутствует, ставится прочерк.
+var M=[
+["morning","Здоровое утро","Healthy morning",[
+["Овсяная каша с мёдом и грецким орехом","Oatmeal with honey and walnuts",25],
+["Овсяная каша с ягодами и грецким орехом","Oatmeal with berries and walnuts",25],
+["Овсяная каша на кокосовом/миндальном молоке","Oatmeal with coconut/almond milk",29],
+["Овсяная каша с бананом","Oatmeal with banana",25]]],
+["sand","Сэндвичи","Sandwiches",[
+["Клаб сэндвич с курицей","Chicken club sandwich",46],
+["Сэндвич Цезарь","Caesar sandwich",38],
+["Сэндвич с говядиной","Beef sandwich",49],
+["Сэндвич с курицей биг","Big chicken sandwich",36],
+["Клаб-сэндвич с тунцом","Tuna club sandwich",31],
+["Сэндвич с индейкой биг","Big turkey sandwich",34]]],
+["zozh","ЗОЖ сэндвич","Healthy Sandwiches",[
+["ЗОЖ Сэндвич с куриной грудкой","Healthy Chicken Breast Sandwich",34],
+["ЗОЖ Сэндвич с тунцом","Healthy Tuna Sandwich",32],
+["ЗОЖ Сэндвич овощной","Healthy Vegetable Sandwich",25],
+["ЗОЖ Сэндвич с омлетом","Healthy Omelette Sandwich",28],
+["Баварский Сэндвич-Дог","Bavarian Sandwich Dog",47],
+["Чизстейк говядина","Beef Cheesesteak",72]]],
+["burg","Бургеры","Burgers",[
+["Бургер Moose","Moose Burger",53],
+["Бургер Куриный Moose","Moose Chicken Burger",47],
+["Жюльен на булочке","Julienne on a bun",55]]],
+["pita","Пита","Pita",[
+["Пита куриная","Chicken pita",37],
+["Пита говяжья","Beef pita",49]]],
+["pasta","Паста","Pasta",[
+["Паста Феттучини с соусом песто","Fettuccine with pesto sauce",71]]],
+["salad","Салаты","Salads",[
+["Салат Цезарь","Caesar salad",42],
+["Салат Греческий","Greek salad",33],
+["Салат с хрустящими баклажанами","Salad with crispy aubergines",44],
+["Теплый салат с нежной куриной грудкой","Warm salad with tender chicken breasts",32]]],
+["soup","Супы","Soups",[
+["Сырный крем суп","Cheese cream soup",32],
+["Суп сырный с курицей","Cheese and chicken soup",27],
+["Грибной крем-суп","Mushroom cream soup",29],
+["Суп Том Ям с курицей","Tom Yum Soup with Chicken",37],
+["Чечевичный суп во французском стиле","French-style lentil soup",28,"New"],
+["Кукурузный крем-суп","Cream of corn soup",32]]],
+["main","Горячие блюда","Main Courses",[
+["Жареный рис с курицей","Fried rice with chicken",38],
+["Курица по-тайски","Thai-style chicken",48],
+["Боул с курицей и рисом","Chicken and rice bowl",46],
+["Фрикассе","Fricassee",58,"New"],
+["WOK с куриной грудкой","WOK с куриной грудкой",48],
+["Жареный рис с овощами","Fried rice with vegetables",33],
+["WOK говяжий с гречневой лапшой","Beef stir-fry with buckwheat noodles",63],
+["Боул с говядиной и гречневой лапшой","A bowl of beef and buckwheat noodles",74]]],
+["coffee","Кофе","Coffee",[
+["Эспрессо","Espresso",[15,null,null]],
+["Американо","Americano",["16/20",22,null],"light-strong"],
+["Фильтр спешлти","Filter Speciality",[17,25,null]],
+["Капучино","Cappuccino",[22,27,33]],
+["Латте","Latte",[23,28,34]],
+["Флэт-Уайт","Flat white",[25,null,null]]],1],
+["spec","Фирменные","Specials",[
+["Раф кофе","Raf coffee",[30,41,null]],
+["Сливочный раф","Raf coffee",[38,52,null]],
+["Хилтон","Hilton",[null,34,null]],
+["Мокко","Mocha",[null,31,36]]],1],
+["ice","Айс кофе","Ice coffee",[
+["Айс американо","Ice americano",27],
+["Айс капучино","Ice cappuccino",33],
+["Айс латте","Ice latte",34],
+["Айс мокко","Ice Mocha",36],
+["Фраппучино","Frappuccino",37],
+["Айс фраппе","Ice frappe",37]]],
+["hot","Горячие напитки","Hot drinks",[
+["Горячий шоколад","Hot chocolate",[21,27,31]],
+["Какао","Cocoa",[null,27,33]]],1],
+["tea","Чай","Tea",[
+["Чай черный/зеленый","Black/green tea",14],
+["Ягодный чай","Berry tea",28],
+["Фруктовый чай","Fruit tea",24],
+["Чай матча","Matcha tea",29],
+["Имбирь лимон","Ginger and lemon",23]]]
+];
+var cats=document.getElementById('cats'),chips=document.getElementById('chips'),q=document.getElementById('q'),empty=document.getElementById('empty');
+var cupHead='<div class="head"><div class="sz"><i class="cup s"></i><i class="cup m"></i><i class="cup l"></i></div></div>';
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+M.forEach(function(c){
+ var sized=c[4]===1,h='<div class="cat" id="'+c[0]+'"><h3>'+esc(c[1])+'<small>'+esc(c[2])+'</small></h3>'+(sized?cupHead:'')+'<div class="list" style="'+(sized?'grid-template-columns:1fr':'')+'">';
+ c[3].forEach(function(i){
+  var name='<div><b>'+esc(i[0])+(i[3]==='New'?'<em>New</em>':'')+'</b><span class="en">'+esc(i[1])+'</span></div>',p;
+  if(Array.isArray(i[2])){
+   p='<div class="sz">'+i[2].map(function(v){return '<span class="pr'+(v==null?' na':'')+'">'+(v==null?'–':v)+'</span>'}).join('')+'</div>';
+  }else p='<span class="pr">'+i[2]+'</span>';
+  if(typeof i[3]==='string'&&i[3]!=='New')name=name.replace('</span></div>','</span><span class="note">'+esc(i[3])+'</span></div>');
+  h+='<div class="it" data-s="'+esc((i[0]+' '+i[1]).toLowerCase())+'">'+name+p+'</div>';
+ });
+ cats.insertAdjacentHTML('beforeend',h+'</div></div>');
+ chips.insertAdjacentHTML('beforeend','<a href="#'+c[0]+'">'+esc(c[1])+'</a>');
+});
+q.addEventListener('input',function(){
+ var v=q.value.trim().toLowerCase(),any=false;
+ document.querySelectorAll('.cat').forEach(function(cat){
+  var n=0;cat.querySelectorAll('.it').forEach(function(it){var ok=!v||it.dataset.s.indexOf(v)>-1;it.style.display=ok?'':'none';if(ok)n++});
+  cat.style.display=n?'':'none';if(n)any=true;
+ });
+ empty.style.display=any?'none':'block';
+});
+var links=[].slice.call(chips.children);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('on',on);if(on)chips.scrollTo({left:a.offsetLeft-20,behavior:'smooth'})})}})},{rootMargin:'-140px 0px -65% 0px'});
+document.querySelectorAll('.cat').forEach(function(c){io.observe(c)});
+</script>
+</body>
+</html>
